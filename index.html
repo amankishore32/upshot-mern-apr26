@@ -3,12 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style1.css" />
     <title>Hello World</title>
+
+    <!-- Precedence of CSS: External < Internal < Inline -->
+    <!-- Internal of Infile style -->
+    <style>
+      * {
+        color: blue;
+      }
+      h1 {
+        color: pink;
+      }
+      /* Access IDs */
+      #header_div {
+        font-style: italic;
+        color: blue;
+      }
+
+      /* Access Class Names */
+      .red,
+      h1 {
+        color: red;
+      }
+
+      .italics.bold {
+        font-style: italic;
+        font-weight: 800;
+      }
+
+      section > ul li {
+        color: red;
+      }
+
+      input[type="date"] {
+        height: 50px;
+        border-radius: 5px;
+        border: 1px solid red;
+        width: 200px;
+        font-size: 25px;
+      }
+    </style>
   </head>
   <body>
     <main></main>
-    <h1>Hello, World!</h1>
+    <h1 class="">Hello, World!</h1>
+    <div id="header_div" class="abc">Inside Div, Hello World!</div>
+    <section class="red">This is section</section>
+    <a href="">Google</a><span>Aman</span>
     <h2>Welcome to the World of Web Development!</h2>
+    <ul>
+      <li>FOo</li>
+      <li>Bar</li>
+    </ul>
     <section>
       <image
         src="https://www.upshottechnologies.in/images/software-training-institute-in-bangalore-btm-layout.jpg"
@@ -23,8 +70,8 @@
       </a>
       <button>Notify</button>
       <input type="button" value="Watch" />
-      <div>
-        <p>
+      <div class="bold">
+        <p class="bold">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus eum et
           labore eligendi, velit incidunt repellendus deleniti hic totam,
           facilis aspernatur iste itaque, laboriosam iure quo. Sunt facere illo
@@ -32,7 +79,7 @@
         </p>
       </div>
       <br />
-      <h3>Lists</h3>
+      <h3 class="red italics">Lists</h3>
       <h5>Unordered List</h5>
       <ul type="circle">
         <li>HTML</li>
@@ -54,7 +101,7 @@
       </ol>
     </section>
 
-    <h2>Table</h2>
+    <h2 class="abc">Table</h2>
     <table border="5" cellpadding="0">
       <thead>
         <tr>
@@ -84,16 +131,39 @@
     <h2>Forms</h2>
     <form action="/submit" method="post">
       <label for="name">Name*:</label>
-      <input type="text" id="name" name="name1" required />
+      <input type="number" id="name" name="name1" required />
       <br /><br />
       <label for="email">Email*:</label>
       <input type="email" id="email" name="email1" required />
       <br /><br />
-      <label for="subscribe">Subscribe</label>
+      <label for="subscribe"
+        ><b><u></u></b
+      ></label>
       <input type="checkbox" id="subscribe" />
       <label for="gender">Gender</label>
       <input type="radio" id="gender" name="gender" />
+      <input type="date" id="dob" name="dob" />
+      foo:
+      <input type="password" />
       <input type="submit" value="Submit" />
+      <input type="reset" value="Reset" />
     </form>
+    <label for="male">Male</label>
+    <input type="radio" id="male" name="gender" />
+    <label for="female">Female</label>
+    <input type="radio" id="female" name="gender" />
+    <br />
+    0-10<input type="radio" name="numbers" /> <br />
+    11-20<input type="radio" name="numbers" /><br />
+    20-30<input type="radio" name="numbers" />
+
+    0-100 <input type="range" name="numbers" min="0" max="80" />
+
+    <div>ashdfkljhlaf</div>
+    <div>asdlkf;la</div>
+
+    <section>Sadik</section>
+    <a href="">aksjdfk</a>
+    <div>Sadik</div>
   </body>
 </html>
