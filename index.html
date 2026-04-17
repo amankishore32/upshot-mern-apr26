@@ -3,11 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style1.css" />
     <title>Hello World</title>
 
     <!-- Precedence of CSS: External < Internal < Inline -->
     <!-- Internal of Infile style -->
+    <!-- .ttf, .woff, .woff2 -->
     <style>
       * {
         color: blue;
@@ -43,6 +50,41 @@
         width: 200px;
         font-size: 25px;
       }
+
+      #pseudo-hover:hover {
+        color: red;
+        font-size: 20px;
+      }
+
+      #pseudo-active:active {
+        border: 2px solid blue;
+        outline: none;
+      }
+
+      #button1 {
+        box-shadow: 2px 3px 4px gray;
+      }
+
+      /* #button1:active {
+        box-shadow: none;
+      } */
+
+      #button1:enabled {
+        border: 1px solid gray;
+        color: gray;
+      }
+
+      #myTable tr:last-child td {
+        background-color: gray;
+      }
+
+      #subscribe:checked {
+        accent-color: red;
+      }
+
+      /* HW for 17April2026 */
+      /* :not()
+      :is, :where, :has, ::before, ::after, ::placeholder */
     </style>
   </head>
   <body>
@@ -165,5 +207,39 @@
     <section>Sadik</section>
     <a href="">aksjdfk</a>
     <div>Sadik</div>
+    <hr />
+    <!-- Pseudo Selector -->
+    <section id="pseudo-hover">Hover Text</section>
+
+    <input id="pseudo-active" type="text" placeholder="Active pseudo" />
+    <input id="button1" type="button" value="click me" disabled />
+
+    <table id="myTable" border="1">
+      <tr>
+        <td>item 1</td>
+        <td>item 1</td>
+        <td>item 1</td>
+      </tr>
+      <tr>
+        <td>item 1</td>
+        <td>item 1</td>
+        <td>item 1</td>
+      </tr>
+      <tr>
+        <td>item 1</td>
+        <td>item 1</td>
+        <td>item 1</td>
+      </tr>
+      <tr>
+        <td>item 1</td>
+        <td>item 1</td>
+        <td>item 1</td>
+      </tr>
+      <tr>
+        <td>item 1</td>
+        <td>item 1</td>
+        <td>item 1</td>
+      </tr>
+    </table>
   </body>
 </html>
