@@ -1,6 +1,11 @@
 @font-face {
     font-family: "bitcoin1";
-    src: url('./assets/fonts/bitcoin.ttf');
+    src: url('./assets/fonts/notoSans.ttf');
+}
+
+*{
+    margin: 0;
+    font-size: 16px;
 }
 
 h1 {
@@ -9,7 +14,7 @@ h1 {
     font-weight: 600;
     font-family: sans-serif;
     background-color: aqua;
-    font-family: "Saira Stencil", sans-serif;
+    font-family: "bitcoin1";
     font-weight: 900;
 }
 
@@ -36,3 +41,30 @@ div {
 h1{
     color: black;
 }
+
+#mySection{
+    width: 40%;
+}
+
+#image1{
+    width: 100vmax;
+    /* height: 100vh; */
+}
+
+/* px, %, vw,vh, em, rem  - IMPORTANT*/
+
+/* width of '0' in the font family */
+
+/* #fontStyle{
+    font-size: 1ch; 
+} */
+
+
+/* Height of 'x' character in the font family */
+#fontStyle {
+    font-size: 5em;
+}
+
+/* 
+vmin - smaller btw vw and vh, 
+vmax - larger btw vw and vh */
