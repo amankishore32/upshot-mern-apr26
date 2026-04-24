@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grids-DemoPage</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        height: 100vh;
+        display: grid;
+        grid-template-areas: "top top top" "navig item sidebar" "navig foot foot";
+        grid-template-columns: 1fr 3fr 1.5fr;
+        grid-template-rows: 0.5fr 5fr 0.5fr;
+      }
+
+      header {
+        grid-area: top;
+        /* height: 20%; */
+      }
+
+      nav {
+        grid-area: navig;
+      }
+
+      main {
+        grid-area: item;
+      }
+
+      aside {
+        grid-area: sidebar;
+      }
+
+      footer {
+        grid-area: foot;
+      }
+
+      header,
+      main,
+      nav,
+      aside,
+      footer {
+        background-color: crimson;
+        color: white;
+        padding: 20px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <header>Header</header>
+    <main>Items/Content</main>
+    <nav>Navigation/Menu</nav>
+    <aside>Sidebar</aside>
+    <footer>Footer</footer>
+  </body>
+</html>
