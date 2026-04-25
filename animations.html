@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      #myBox {
+        width: 100px;
+        height: 100px;
+        background-color: tomato;
+        animation-name: myAnimation;
+        animation: myAnimation 4s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+      }
+
+      @keyframes myAnimation {
+        0% {
+          background-color: tomato;
+          margin: 0px;
+        }
+        /* 20% {
+          color: white;
+          background-color: yellow;
+        }
+        60% {
+          box-shadow: 2px 3px 4px #333;
+        } */
+        100% {
+          background-color: dodgerblue;
+          margin-left: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="myBox">My Box</div>
+  </body>
+</html>
