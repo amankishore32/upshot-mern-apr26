@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Media Queries</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .container {
+        border: 1px solid white;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .box {
+        background-color: dodgerblue;
+        border: 1px solid black;
+        padding: 10px;
+        margin: 10px;
+        color: white;
+        height: 200px;
+        width: 300px;
+      }
+
+      @media (min-width: 400px) and (max-width: 700px) {
+        .container {
+          flex-direction: column;
+        }
+
+        .box:nth-child(2) {
+          background-color: black;
+        }
+      }
+
+      @media (orientation: portrait) {
+        .container {
+          background-color: crimson;
+        }
+      }
+
+      @media not screen {
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Et nostrum
+        porro recusandae aperiam molestias, repudiandae nisi minus inventore
+        nam? Nisi sit doloribus consequuntur dicta sunt ipsam omnis, architecto
+        et aperiam?
+      </div>
+      <div class="box">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint nulla
+        debitis id eveniet consequatur molestiae. Nesciunt sit dolores alias.
+        Facere, quos quisquam rerum quo saepe obcaecati qui. Dolore, molestias
+        impedit.
+      </div>
+      <div class="box">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique
+        quasi vitae, suscipit quod sint rerum natus, ex assumenda officiis
+        deleniti repellendus, aut corrupti a eum expedita cum ea quas sed.
+      </div>
+    </div>
+  </body>
+</html>
