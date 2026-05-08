@@ -15,19 +15,29 @@ function createToDoList() {
   let tasks = [];
 
   function addTask(work) {
-    // TODO
+    return tasks.push({ task: work, isCompleted: false });
   }
 
   function removeTask(work) {
-    // TODO
+    let count = 0;
+    for (job of work) {
+      count++;
+      if (job.task == work) {
+        task.splice(count, 1);
+      }
+    }
+
+    return task;
   }
 
   function markCompleted(work) {
-    // TODO
+    let index = tasks.findIndex((t) => t.task == work);
+    task[index].isCompleted = true;
+    return task[index];
   }
 
   function listTasks() {
-    // TODO
+    console.log(tasks);
   }
 
   return { addTask, removeTask, markCompleted, listTasks };
