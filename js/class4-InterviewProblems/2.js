@@ -7,6 +7,12 @@
 
 function reverseWords(sentence) {
   // Write code here
+  let words = sentence.split(" ");
+  let reversedArr = [];
+  while (words.length > 0) {
+    reversedArr.push(words.pop());
+  }
+  return reversedArr.join(" ");
 }
 
 console.log(reverseWords("Hello world")); // "world Hello"
