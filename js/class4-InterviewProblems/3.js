@@ -20,6 +20,23 @@ const students = [
 
 function studentGrading(studentList) {
   // Write your code here
+  const result = {
+    A: [],
+    B: [],
+    C: [],
+  };
+
+  for (let index = 0; index < studentList.length; index++) {
+    if (studentList[index].score >= 90 && studentList[index].score <= 100) {
+      result.A.push(studentList[index].name);
+    } else if (studentList[index].score >= 75) {
+      result.B.push(studentList[index].name);
+    } else {
+      result.C.push(studentList[index].name);
+    }
+  }
+
+  return result;
 }
 
-console.log(studentGrading(student));
+console.log(studentGrading(students));
