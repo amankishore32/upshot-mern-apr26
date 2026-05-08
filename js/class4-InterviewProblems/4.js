@@ -13,24 +13,46 @@ const books = [
   { title: "Book3", author: "Author3", isAvailable: true },
   { title: "Book4", author: "Author4", isAvailable: true },
   { title: "Book5", author: "Author5", isAvailable: true },
-  { title: "Book6", author: "Author1", isAvailable: true },
-  { title: "Book7", author: "Author1", isAvailable: true },
+  { title: "Book6", author: "Author6", isAvailable: true },
+  { title: "Book7", author: "Author7", isAvailable: true },
 ];
 
 function listBooks() {
-  // TODO 
+  return books;
 }
 
+// for-OF loop -> arrays a = [1, 2, 3, 4]
+// for-IN loop -> objects
 function markAsBorrowed(title) {
-  // TO DO
+  for (let book of books) {
+    if (book.title == title) {
+      if (book.isAvailable) {
+        book.isAvailable = false;
+        return book;
+      }
+    }
+  }
 }
 
 function returnBook(title) {
-  // TO DO
+  for (let book of books) {
+    if (book.title == title) {
+      if (!book.isAvailable) {
+        book.isAvailable = true;
+        return book;
+      }
+    }
+  }
 }
 
 function findBooksByAuthor(author) {
-  // TO DO
+  const authoredBooks = [];
+  for (let book of books) {
+    if (book.author == author) {
+      authoredBooks.push(book);
+    }
+  }
+  return authoredBooks;
 }
 
 console.log(listBooks());
