@@ -23,6 +23,21 @@
     <button id="fixBtn">Fix List</button>
     <script>
       // Fix the list by inserting the missing element using querySelectorAll and insertBefore
+
+      let button = document.getElementById("fixBtn");
+      button.addEventListener("click", function () {
+        let ulList = document.querySelector("ul");
+        let myList = document.querySelectorAll("li");
+        console.log(myList);
+
+        let indexWith6 = myList[6];
+
+        // Create the element required
+        let myElem = document.createElement("li");
+        myElem.innerText = "7";
+
+        ulList.insertBefore(myElem, indexWith6);
+      });
     </script>
   </body>
 </html>
