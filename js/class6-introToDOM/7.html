@@ -27,5 +27,26 @@
   </body>
   <script>
     // On click of the Color name corresponding divs must change their background-color.
+    let listLi = document.querySelectorAll("li");
+    console.log(listLi[0]);
+
+    listLi[0].addEventListener("click", function () {
+      console.log("Red");
+    });
+    let redDiv = document.getElementById("div1");
+    redDiv.classList.add("divColorRed");
+
+    let blueDiv = document.getElementById("div2");
+    redDiv.classList.add("divColorBlue");
+
+    let greenDiv = document.getElementById("div3");
+    redDiv.classList.add("divColorGreen");
+
+    let resetBtn = document.getElementById("resetBtn");
+
+    // resetBtn.addEventListener("click", function () {
+    //   redDiv.classList.remove("divColorRed");
+    //   redDiv.classList.add("divColorNone");
+    // });
   </script>
 </html>
