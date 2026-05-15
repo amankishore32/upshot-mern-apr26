@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body id="body-1">
+    <button id="btn-1">Say Hello</button>
+
+    <script>
+      // on click of the button append hello to the page
+
+      // Select/Access the element
+      // 2 ways to access any element
+      // 1. querySelector
+      // 2. getElementById
+
+      let button = document.getElementById("btn-1");
+      console.log(button);
+
+      // Capture an Event using Event Listeners
+      button.addEventListener("click", function () {
+        let paraEle = document.createElement("p");
+        paraEle.innerText = "Hello";
+
+        // Append element to another element
+        let body = document.getElementById("body-1");
+        body.appendChild(paraEle);
+      });
+    </script>
+  </body>
+</html>
