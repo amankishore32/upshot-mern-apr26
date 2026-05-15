@@ -15,9 +15,21 @@
     </style>
   </head>
   <body>
-    <button id="btn-1" class="active">Click Me</button>
+    <button id="btn-1" class="inactive">Click Me</button>
     <script>
       // On click of the button change the button to active and vice versa.
+      let myBtn = document.querySelector(".inactive");
+      myBtn.addEventListener("click", function (event) {
+        if (myBtn.classList.contains("inactive")) {
+          myBtn.classList.remove("inactive");
+          myBtn.classList.add("active");
+          myBtn.innerHTML = "I am Active";
+        } else {
+          myBtn.classList.remove("active");
+          myBtn.classList.add("inactive");
+          myBtn.innerHTML = "I am In-Active";
+        }
+      });
     </script>
   </body>
 </html>
