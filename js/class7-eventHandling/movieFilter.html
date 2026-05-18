@@ -111,6 +111,37 @@
     </div>
     <script>
       // Q Make the filter work
+
+      // Selected Dropdown Option
+      let dropDown = document.querySelector("select");
+
+      //   let movieList = document.querySelectorAll(".movies");
+
+      console.log(dropDown);
+      dropDown.addEventListener("change", function (event) {
+        let slectedOption = dropDown.value;
+
+        let allPrices = document.querySelectorAll(".price");
+        let allMovies = document.querySelectorAll(".movies");
+
+        if (slectedOption === "none") {
+          // Make everything visible
+          for (i = 0; i < allPrices.length; i++) {
+            allPrices[i].parentElement.style.display = "block";
+          }
+        } else {
+          for (i = 0; i < allPrices.length; i++) {
+            if (allPrices[i].getAttribute("data-category") !== slectedOption) {
+              allPrices[i].parentElement.style.display = "none";
+            } else {
+              // TODO - if required
+              allPrices[i].parentElement.style.display = "block";
+            }
+          }
+        }
+      });
+
+      // let result = movieList.filter((movie) => selectedOption. === movie.)
     </script>
   </body>
 </html>
