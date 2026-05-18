@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -699,8 +699,43 @@
       voluptas, quas perspiciatis fugit unde. Quaerat quos eius, amet ea quam
       maiores consectetur perferendis ipsam animi aut, molestiae iure!
     </p>
+
+    <!-- <div id="myDiv" style="height: 100px; width: 100px; border: 1px solid red">
+      FOo
+    </div> -->
     <script>
       // Q Implement key taps such that on pressing 1 you scroll to section 1,  pressing 2 you scroll to section 2 and  pressing 3 you scroll to section 3. Also implement key tap b to go to bottom of the page and key tap t to go to top of the page
+
+      let s1 = document.getElementById("s1");
+      let s2 = document.getElementById("s2");
+      let s3 = document.getElementById("s3");
+      let div1 = document.getElementById("myDiv");
+      document.addEventListener("keydown", function (event) {
+        console.log(event.key);
+        // console.log(div1.getBoundingClientRect());
+        if (event.key == 1) {
+          // Scroll to section 1
+          s1.scrollIntoView();
+        } else if (event.key == 2) {
+          // Scroll to section 2
+          s2.scrollIntoView();
+        } else if (event.key == 3) {
+          // scroll to section 3
+          s3.scrollIntoView();
+        } else if (event.key == "b") {
+          // Scroll to bottom of the page
+          window.scrollBy(
+            0,
+            document.querySelector("html").getBoundingClientRect().height,
+          );
+        } else if (event.key == "t") {
+          // scroll to top of the page
+          window.scrollBy(
+            0,
+            -document.querySelector("html").getBoundingClientRect().height,
+          );
+        }
+      });
     </script>
   </body>
 </html>
