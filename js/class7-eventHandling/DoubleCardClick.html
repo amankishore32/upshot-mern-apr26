@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Change Color on Double click</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+      }
+      .card {
+        margin: 30px;
+        padding: 50px;
+        border: 1px solid black;
+      }
+
+      .blue {
+        background-color: blue;
+        box-shadow: 0 0 6px 5px;
+      }
+
+      .red {
+        background-color: red;
+        box-shadow: 0 0 6px 5px;
+      }
+      .green {
+        background-color: green;
+        box-shadow: 0 0 6px 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" data-color="blue" data-size="2"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="red"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+    <div class="card" data-color="green"></div>
+    <div class="card" data-color="blue"></div>
+  </body>
+  <script>
+    //  Double click on card to fetch the COLOR using data-color and apply same to the card's background color
+    //  Also Update the data-color to 'used'
+
+    //  Read the cards
+    let cardsNodeList = document.querySelectorAll(".card");
+
+    //  Solution 1 - Applying styles directly
+    // for (let i = 0; i < cardsNodeList.length; i++) {
+    //   cardsNodeList[i].addEventListener("dblclick", function (event) {
+    //     // console.log(event);
+    //     let color = event.target.dataset.color;
+    //     // console.log(event.target, color);
+    //     cardsNodeList[i].style.backgroundColor = color;
+    //   });
+    // }
+
+    // Solution 2 - Using Classes
+    for (let i = 0; i < cardsNodeList.length; i++) {
+      //   console.log(cardsNodeList[i]);
+      cardsNodeList[i].addEventListener("dblclick", function (event) {
+        // console.log(event.target);
+        let classToBeAdded = event.target.getAttribute("data-color");
+        event.target.classList.add(classToBeAdded);
+        // console.log(event.target);
+      });
+    }
+  </script>
+</html>
