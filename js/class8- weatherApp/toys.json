@@ -1,0 +1,10 @@
+{
+  "toy1": {
+    "name": "Teddy Bear",
+    "color": "brown",
+    "isAvailable": true,
+    "qty": 2
+  },
+  "toy2": { "name": "car", "color": "red", "isAvailable": false, "qty": 0 },
+  "toy3": { "name": "doll", "color": "pink", "isAvailable": true, "qty": 4 }
+}
