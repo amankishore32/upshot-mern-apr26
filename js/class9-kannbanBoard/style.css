@@ -108,3 +108,61 @@ body{
 .action-btn-cont > div:active{
     transform: translateY(0);
 }
+
+
+/* Modal Styling */
+.modal-cont{
+    /* Read out the Middle align concept - HW */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 450px;
+    width: 90%;
+    max-width: 550px;
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    overflow: hidden;
+}
+
+.modal-cont > div{
+    width: 100%;
+    padding: 2rem;
+}
+
+.modal-header{
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 2rem 2rem 1rem;
+    line-height: 1.5;
+}
+
+.modal-header h2{
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header p{
+    font-size: 0.95rem;
+        opacity: 0.9;
+        font-weight: 400;
+}
+
+.textArea-cont{
+    background-color: #fafbfc;
+}
+
+.textArea-cont textarea::placeholder{
+    color: #6b7280;
+    font-style: italic;
+}
+
+.priority-color-cont{
+    background-color: white;
+}
