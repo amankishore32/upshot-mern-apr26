@@ -31,7 +31,7 @@ document.addEventListener("keydown", function (event) {
     // 2. Make the modalTextArea empty
     // 3. Close the modal
     if (modalTextArea.value.length > 0 && selectedPriority != null) {
-      createTicket(modalTextArea.value, selectedPriority);
+      createTicket(modalTextArea.value, selectedPriority, shortid());
       modalTextArea.value = "";
       clearPrioritySelction();
       toggleModal();
@@ -50,19 +50,21 @@ function toggleModal() {
 }
 
 // Create Ticket
-function createTicket(taskDetails, priority) {
+// 1. UI rendering
+// 2. Saving the Data
+function createTicket(taskDetails, priority, uid) {
   //   console.log(priority);
+  saveToLocal(uid, priority, taskDetails);
   let ticktCont = document.createElement("div");
   ticktCont.setAttribute("class", "ticket-cont");
 
   // Create child elements
   ticktCont.innerHTML = `
         <div class="ticket-color" style="background-color:${priority}"></div>
-        <div class="ticket-id">12345</div>
+        <div class="ticket-id">${uid}</div>
         <div class="task-area">${taskDetails}</div>
     `;
 
-  //   console.log(ticktCont);
   mainCont.appendChild(ticktCont);
 }
 
@@ -88,4 +90,11 @@ function clearPrioritySelction() {
     divElm2.classList.remove("active");
   });
   selectedPriority = null;
+}
+
+// Save to local storage
+function saveToLocal(taskId, priority, taskDetails) {
+  let localDB = JSON.parse(localStorage.getItem("tickets"));
+  (localDB ??= []).push({ priority, taskId, taskDetails });
+  localStorage.setItem("tickets", JSON.stringify(localDB));
 }
