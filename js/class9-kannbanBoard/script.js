@@ -8,8 +8,14 @@ const priorities = ["lightpink", "lightgreen", "lightblue", "black"];
 
 const priorityDiv = document.querySelectorAll(".priority-color");
 
+const deleteBtn = document.querySelector(".remove-btn");
+let deleteBtnState = false;
+
 let modalState = false;
 let selectedPriority = null;
+
+let lockIcon = "fa-lock";
+let unlockIcon = "fa-unlock";
 
 //  Creating new Ticket
 //  1. Get the content from text area
@@ -63,9 +69,16 @@ function createTicket(taskDetails, priority, uid) {
         <div class="ticket-color" style="background-color:${priority}"></div>
         <div class="ticket-id">${uid}</div>
         <div class="task-area">${taskDetails}</div>
+        <div class="ticket-lock">
+          <i class="fa-solid fa-lock"></i>
+        </div>
     `;
 
   mainCont.appendChild(ticktCont);
+
+  //  Attahcing the event Listeners for User Fucntionality
+  removeTicket(ticktCont);
+  lockUnlockTicket(ticktCont);
 }
 
 // Get the selected priority
@@ -98,3 +111,53 @@ function saveToLocal(taskId, priority, taskDetails) {
   (localDB ??= []).push({ priority, taskId, taskDetails });
   localStorage.setItem("tickets", JSON.stringify(localDB));
 }
+
+deleteBtn.addEventListener("click", function () {
+  console.log("Clicked Delete Btn");
+  if (deleteBtnState) {
+    deleteBtnState = false;
+    deleteBtn.style.color = "white";
+  } else {
+    deleteBtn.style.color = "red";
+    deleteBtnState = true;
+  }
+});
+
+// LockEnlock Functionality
+function lockUnlockTicket(ticket) {
+  const ticketLock = ticket.querySelector(".ticket-lock");
+  let ticketLockIcon = ticketLock.children[0];
+  let ticketTaskArea = ticket.querySelector(".task-area");
+
+  ticketLock.addEventListener("click", function () {
+    if (ticketLockIcon.classList.contains(lockIcon)) {
+      ticketLockIcon.classList.remove(lockIcon);
+      ticketLockIcon.classList.add(unlockIcon);
+
+      ticketTaskArea.setAttribute("contenteditable", "true");
+      ticketTaskArea.focus();
+      const selection = window.getSelection();
+      const range = document.createRange();
+      range.collapse(false);
+    } else {
+      ticketLockIcon.classList.remove(unlockIcon);
+      ticketLockIcon.classList.add(lockIcon);
+      ticketTaskArea.setAttribute("contenteditable", "false");
+    }
+  });
+}
+
+// Remove Functionliaty for the User
+function removeTicket(ticket) {
+  ticket.addEventListener("click", function () {
+    if (deleteBtnState) ticket.remove();
+  });
+}
+
+// for-in for-of
+
+// HW
+// 1. Change the Priority on click of the color/border
+// 2. Load all the tickets on Browser Start from LocalStorage
+// 3. Any change to the ticket(s) must reflect changes in the loacalStorage as well.
+// 4. Filter Based on the Priority Selectors.
