@@ -7,7 +7,7 @@ function greet() {
 }
 
 function calc() {
-  for (i = 0; i < 1000000000; i++) {}
+  //   for (i = 0; i < 1000000000; i++) {}
   console.log("Calculated");
 }
 
