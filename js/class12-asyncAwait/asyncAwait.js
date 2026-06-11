@@ -1,30 +1,34 @@
 const p1 = new Promise(function (resolve, reject) {
   setTimeout(function () {
     resolve("This is resolved");
-  }, 10000);
+  }, 5000);
 });
 
-function greet() {
-  setTimeout(() => {
-    console.log("Bye");
-  }, 5000);
-}
+const p2 = new Promise(function (resolve, reject) {
+  setTimeout(function () {
+    resolve("Greetings...");
+  }, 2000);
+});
 
-function resolvePromise() {
-  p1.then((res) => {
-    console.log(res);
-  });
-  console.log("Upshot");
-}
+// function resolvePromise() {
+//   p1.then((res) => {
+//     console.log(res);
+//   });
+//   console.log("Upshot");
+// }
 
-let data = "";
 async function handlePromise() {
   console.log("Start");
-  data = await p1;
-  console.log("Hello");
+  let data = await p1;
+  console.log(data);
 }
 
-// greet();
+async function greet() {
+  console.log("Greet started");
+  let data2 = await p2;
+  console.log(data2);
+}
+
 // resolvePromise();
 handlePromise();
-console.log(data);
+greet();
