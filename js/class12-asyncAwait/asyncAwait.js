@@ -1,13 +1,13 @@
 const p1 = new Promise(function (resolve, reject) {
   setTimeout(function () {
     resolve("This is resolved");
-  }, 5000);
+  }, 50000);
 });
 
 const p2 = new Promise(function (resolve, reject) {
   setTimeout(function () {
     resolve("Greetings...");
-  }, 2000);
+  }, 30000);
 });
 
 // function resolvePromise() {
