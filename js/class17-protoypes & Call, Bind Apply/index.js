@@ -20,12 +20,15 @@ function Car(model, year) {
   this.year = year;
 }
 
-Car.prototype.dsiplayInfo = function () {
+Car.prototype.__proto__.dsiplayInfo = function () {
   return `This is a ${this.model} of year ${this.year}.`;
 };
 
 let car1 = new Car("Toyota Camry", "2021");
 let car2 = new Car("Ford Mustang", "2023");
 
-console.log(car1);
-console.log(car2.dsiplayInfo());
+console.log(car1.dsiplayInfo());
+console.log(car2);
+
+
+// H.W. -> Object.create(), Object.getprototypeof(), Object.setPrototypeof()
